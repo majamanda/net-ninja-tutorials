@@ -13,9 +13,10 @@ const server = http.createServer((req, res) => {
     // var wrtStream = fs.createWriteStream(__dirname + '/writethis.txt', 'utf8');
     readStream.pipe(res);
 
-    res.end('Hello World\n');
+    // res.end('Hello World\n');
 });
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
