@@ -1,30 +1,21 @@
-var stuff = require('https')
+const http = require('node:http');
 var fs = require('fs')
 
+const hostname = '127.0.0.1';
+const port = 3000;
 
-var Person = function (name) {
-    this.name = name;
-};
+const server = http.createServer((req, res) => {
+    console.log('request was made: ' + req.url);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    
+    var readStream = fs.createReadStream(__dirname + '/readthis.txt', 'utf8');
+    // var wrtStream = fs.createWriteStream(__dirname + '/writethis.txt', 'utf8');
+    readStream.pipe(res);
 
-util.inherits(Person, events.EventEmitter);
-
-var asintha = new Person('asintha');
-var james = new Person('james');
-var george = new Person('george');
-
-var people = [asintha, james, george];
-
-people.forEach(function(person) {
-    person.on('speak', function(msg) {
-        console.log(`${person.name} said ${msg}`);
-    });
+    // res.end('Hello World\n');
 });
 
-
-asintha.emit('speak', 'mbambande fada');
-james.emit('speak', 'indedi fada');
-
-
-counter = stuff.counter;
-
-console.log(counter(['a','b','c','d']))
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
