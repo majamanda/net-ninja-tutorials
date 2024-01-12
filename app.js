@@ -7,12 +7,15 @@ const port = 3000;
 const server = http.createServer((req, res) => {
     console.log('request was made: ' + req.url);
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'application/json');
     
-    var readStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
-    // var wrtStream = fs.createWriteStream(__dirname + '/writethis.txt', 'utf8');
-    readStream.pipe(res);
-    // res.end('Hello World\n');
+    var myObj = {
+      name: 'mac',
+      job: 'Dev',
+      age: 29
+    }
+
+    res.end(JSON.stringify(myObj));
 });
 
 server.listen(port, hostname, () => {
