@@ -7,12 +7,11 @@ const port = 3000;
 const server = http.createServer((req, res) => {
     console.log('request was made: ' + req.url);
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', 'text/html');
     
-    var readStream = fs.createReadStream(__dirname + '/readthis.txt', 'utf8');
+    var readStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
     // var wrtStream = fs.createWriteStream(__dirname + '/writethis.txt', 'utf8');
     readStream.pipe(res);
-
     // res.end('Hello World\n');
 });
 
