@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
       res.setHeader('Content-Type', 'text/html');
       fs.createReadStream(__dirname + '/index.html').pipe(res);
 
-    } else if (req.url === '/contact') {
+    } else if (req.url === '/contacts') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
       fs.createReadStream(__dirname + '/contact.html').pipe(res);
