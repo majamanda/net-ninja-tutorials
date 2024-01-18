@@ -1,7 +1,7 @@
 {
   "name": "net-ninja-tutorials",
-  "description": "CSS and asset files for the Net Ninja YouTube nodejs playlist",
   "version": "1.0.0",
+  "description": "net ninja nodejs tutorial series",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,16 +11,22 @@
     "url": "git+https://github.com/majamanda/net-ninja-tutorials.git"
   },
   "keywords": [
-    "test",
-    "learn",
-    "example",
-    "nodejs",
     "node",
-    "npm",
-    "todo",
+    "node",
+    "tutorial",
+    "net-ninja",
+    "ninja",
+    "to",
+    "do",
+    "to-do",
+    "to-do",
     "app",
+    "to",
+    "do",
     "app",
-    "js"
+    "nodejs",
+    "nodejs",
+    "tutorial"
   ],
   "author": "majamanda",
   "license": "ISC",
@@ -30,7 +36,6 @@
   "homepage": "https://github.com/majamanda/net-ninja-tutorials#readme",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "nodemon": "^3.0.3"
+    "express": "^4.18.2"
   }
 }

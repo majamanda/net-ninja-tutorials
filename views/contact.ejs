@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{background: skyblue; font-family: verdana; color: white;
-            padding: 30px;}
-        h1{font-size: 48px; text-transform: uppercase; letter-spacing: 2px;
-            text-align: center;}
-        p{font-size: 16px; text-align: center;}
-    </style>
+    <link rel="stylesheet" href="/assets/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
@@ -17,5 +11,20 @@
     <h1>Contact Us</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quia sit illum, non numquam delectus molestiae atque, omnis beatae maiores modi dicta, ab 
         fugiat neque temporibus suscipit. Modi, excepturi vitae?</p>
+    <p><%= qs.dept %></p>
+    <p><%= qs.person %></p>
+
+    <form action="/contact" method="POST" id="contact-form">
+        <label for="who">Who do you want to contact?</label>
+        <input type="text" id="who" name="who" value="<%= qs.person %>" />
+
+        <label for="dept">Which department?</label>
+        <input type="text" id="dept" name="dept" value="<%= qs.dept %>" />
+
+        <label for="email">Your email</label>
+        <input type="text" id="email" name="email"/>
+        <input type="submit" value="submit" />
+    </form>
+    
 </body>
 </html>
